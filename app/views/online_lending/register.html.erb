@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Welcome</title>
+    <style type="text/css">
+      #container {
+        width: 900px;
+        min-height: 700px;
+        margin: 0px auto;
+      }
+      #lender, #borrower {
+        width: 400px;
+        display: inline-block;
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px 20px;
+        vertical-align: top;
+      }
+      h3 {
+        color: purple;
+      }
+      form label {
+        width: 170px !important;
+      }
+      .col-sm-10 {
+        display: inline !important;
+        width: 200px;
+      }
+      p {
+        font-size: 11px;
+        float: right;
+      }
+      button {
+        margin: 10px;
+        float: right;
+        box-shadow: 2px 2px purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="lender">
+        <h3>Lender</h4>
+        <form class="form-horizontal" role="form" action="/online_lending/create_lender" method="post">
+          <%= token_tag nil %>
+          <div class="form-group">
+            <label class="control-label col-sm-2">First Name:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="lender[first_name]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Last Name:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="lender[last_name]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="lender[email]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Password:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" name="lender[password]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Money:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="lender[money]">
+            </div>
+          </div>
+          <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Register</button>
+            </div>
+          </div>
+        </form>
+        <a href="/online_lending/login">Already a member?</a>
+      </div>
+      <div id="borrower">
+        <h3>Borrower</h4>
+        <form class="form-horizontal" role="form" action="/online_lending/create_borrower" method="post">
+          <%= token_tag nil %>
+          <div class="form-group">
+            <label class="control-label col-sm-2">First Name:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="borrower[first_name]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Last Name:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="borrower[last_name]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" >Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="borrower[email]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" >Password:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" name="borrower[password]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Need Money For:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="borrower[purpose]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Description:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="borrower[description]" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Amount Needed:</label>
+            <div class="col-sm-10">          
+              <input type="number" class="form-control" name="borrower[money]" >
+            </div>
+          </div>
+          <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Register</button>
+            </div>
+          </div>
+        </form>
+        <a href="/online_lending/login">Already a member?</a>
+    </div>
+  </body>
+</html>
