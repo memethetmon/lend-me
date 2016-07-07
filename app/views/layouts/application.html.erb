@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Belt</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<!--   <title>LendMe</title>
+ -->  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -22,7 +22,7 @@
   <form action='/sessions' method='post'>
     <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
     <input type='hidden' name='_method' value='delete'>
-    <button type='submit' style='background-color: red; color: white;'>Log Out</button>
+    <button type='submit'>Log Out</button>
   </form>
 <% end %>
 

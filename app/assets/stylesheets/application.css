@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+#container {
+    width: 95%;
+    min-height: 700px;
+    margin: 0px auto;
+}
+	#lender, #borrower {
+        width: 400px;
+        display: inline-block;
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px 20px;
+        vertical-align: top;
+    }
+	#login, #register {
+	    width: 400px;
+	    display: inline-block;
+	    border: 2px solid black;
+	    margin: 10px;
+	    padding: 10px 20px;
+	    vertical-align: top;
+	}
+
+  #lender .title, #borrower .title, #login .title {
+    color: purple;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  span {
+  	line-height: 30px;
+  	display: block;
+  }
+
+  form label {
+    width: 150px !important;
+  }
+  .col-sm-10 {
+    display: inline !important;
+    width: 200px !important;
+  }
+  p {
+    font-size: 11px;
+    float: right;
+  }
+  button {
+    margin: 10px;
+    float: right;
+    box-shadow: 2px 2px purple;
+  }
+
+  table {
+  	border-collapse: collapse;
+  	width: 100%;
+  }
+
+  th, td {
+  	text-align: left;
+  	padding: 8px;
+  }
+
+  tr:nth-child(even) {
+  	background-color: #f2f2f2;
+  }
+
+  th {
+  	background-color: #ffcc00;
+  }
+
+  .money_input {
+  	width: 70px;
+  }

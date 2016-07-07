@@ -2,45 +2,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <title>Welcome</title>
-    <style type="text/css">
-      #container {
-        width: 900px;
-        min-height: 700px;
-        margin: 0px auto;
-      }
-      #login, #register {
-        width: 400px;
-        display: inline-block;
-        border: 2px solid black;
-        margin: 10px;
-        padding: 10px 20px;
-        vertical-align: top;
-      }
-      h3 {
-        color: purple;
-      }
-      form label {
-        width: 170px !important;
-      }
-      .col-sm-10 {
-        display: inline !important;
-        width: 200px;
-      }
-      p {
-        font-size: 11px;
-        float: right;
-      }
-      button {
-        margin: 10px;
-        float: right;
-        box-shadow: 2px 2px purple;
-      }
-    </style>
+    <title>Log In</title>
   </head>
   <body>
     <div id="login">
-      <h3>Log In</h4>
+      <h3 class='title'>Log In</h4>
       <form class="form-horizontal" role="form" action="/sessions" method="post">
         <%= token_tag nil %>
         <div class="form-group">

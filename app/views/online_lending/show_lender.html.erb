@@ -1,56 +1,58 @@
-<span>Name: <%= @lender.first_name%> <%= @lender.last_name %></span><br />
-<span>Amount Balance: <b>$<%= @lender.money %></b></span><br />
-<h4>List of people in need of help:</h4>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Need Money for</th>
-		<th>Reason for Loan</th>
-		<th>Amount Needed</th>
-		<th>Amount Raised</th>
-		<th>Action</th>
-	</tr>
-	<% @borrowers.each do |b| %>
+<div id='container'>
+	<span>Name: <%= @lender.first_name%> <%= @lender.last_name %></span>
+	<span>Amount Balance: <b>$<%= @lender.money %></b></span><br />
+	<h4>List of people in need of help:</h4>
+	<table>
 		<tr>
-			<td><%= b.first_name %> <%= b.last_name %></td>
-			<td><%= b.purpose %></td>
-			<td><%= b.description %></td>
-			<td>$<%= b.money %></td>
-			<td><%= b.raised %></td>
-			<td>
-			<% if @lender.money > 0 %>
-				<form action='/money_lent' method='post'>
-					<%= token_tag nil %>
-					<input type='hidden' name='borrower_id' value='<%= b.id %>'>
-					<input type='number' name='amount'>
-					<input type='submit' value='Lend'>
-				</form>
-			<% else %>
-				<p>Insufficient funds</p>
-			<% end %>
-			</td>
+			<th>Name</th>
+			<th>Need Money for</th>
+			<th>Reason for Loan</th>
+			<th>Amount Needed</th>
+			<th>Amount Raised</th>
+			<th>Action</th>
 		</tr>
-	<% end %>
-</table>
+		<% @borrowers.each do |b| %>
+			<tr>
+				<td><%= b.first_name %> <%= b.last_name %></td>
+				<td><%= b.purpose %></td>
+				<td><%= b.description %></td>
+				<td>$<%= b.money %></td>
+				<td>$<%= b.raised %></td>
+				<td>
+				<% if @lender.money > 0 %>
+					<form action='/money_lent' method='post'>
+						<%= token_tag nil %>
+						<input type='hidden' name='borrower_id' value='<%= b.id %>'>
+						<input class='money_input' type='number' name='amount'>
+						<input type='submit' value='Lend'>
+					</form>
+				<% else %>
+					<p>Insufficient funds</p>
+				<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
 
-<h4>List of People you lend money to:</h4>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Need Money for</th>
-		<th>Reason for Loan</th>
-		<th>Amount Needed</th>
-		<th>Amount Raised</th>
-		<th>Amount Lent</th>
-	</tr>
-	<% @lendees.each do |lendee| %>
+	<h4>List of People you lend money to:</h4>
+	<table>
 		<tr>
-			<td><%= lendee.first_name %> <%= lendee.last_name %></td>
-			<td><%= lendee.purpose %></td>
-			<td><%= lendee.description %></td>
-			<td><%= lendee.money %></td>
-			<td><%= lendee.raised %></td>
-			<td><%= lendee.amount %></td>
+			<th>Name</th>
+			<th>Need Money for</th>
+			<th>Reason for Loan</th>
+			<th>Amount Needed</th>
+			<th>Amount Raised</th>
+			<th>Amount Lent</th>
 		</tr>
-	<% end %>
-</table>
+		<% @lendees.each do |lendee| %>
+			<tr>
+				<td><%= lendee.first_name %> <%= lendee.last_name %></td>
+				<td><%= lendee.purpose %></td>
+				<td><%= lendee.description %></td>
+				<td>$<%= lendee.money %></td>
+				<td>$<%= lendee.raised %></td>
+				<td>$<%= lendee.amount %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
